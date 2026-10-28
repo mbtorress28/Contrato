@@ -19,7 +19,7 @@ public class Contrato {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.porcentajeRegalias = porcentajeRegalias;
-        this.estado = estado;
+        this.estado = EstadoContrato.VIGENTE;
     }
 
     public int getId() {
@@ -77,11 +77,9 @@ public class Contrato {
             if( LocalDate.now().isAfter(fechaFin))
             {
                 this.estado=EstadoContrato.VENCIDO;
-
             }
             else
                 this.estado=EstadoContrato.VIGENTE;
-
         }
     }
 
